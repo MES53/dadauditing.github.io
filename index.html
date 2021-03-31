@@ -34,6 +34,32 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script type="text/javascript">
+  (function() {
+  emailjs.init("user_O4tAphLHzWweGlFlB5bUY");
+  })();
+  </script>
+
+<script type="text/javascript">
+  window.onload = function() {
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+          // generate a five digit number for the contact_number variable
+          this.contact_number.value = Math.random() * 100000 | 0;
+          // these IDs from the previous steps
+          emailjs.sendForm('contact_service', 'contact_form', this)
+              .then(function() {
+                  console.log('SUCCESS!');
+              }, function(error) {
+                  console.log('FAILED...', error);
+              });
+      });
+  }
+</script>
+
+
+
 </head>
 
 <body>
@@ -362,8 +388,8 @@ Partnering with DAD has resulted in 100% customer satisfaction over the years.
             <h4>Freelancer</h4>
             <p>
               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-Being outsourcer to DAD has helped double our profit this quarter.
-<i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              Being outsourcer to DAD has helped double our profit this quarter.  
+            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
             </p>
           </div>
 
@@ -481,8 +507,8 @@ Ali and his team our bunch of talented people who have help us cut our operating
         </div>
 
         <div>
-          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
-        </div>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.763547064893!2d55.34919701432896!3d25.27853843460043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d44265e948b%3A0xb3095660e734b638!2sRKM%20Building!5e0!3m2!1sen!2sin!4v1617209338637!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div> 
 
         <div class="row mt-5">
 
@@ -503,7 +529,7 @@ Ali and his team our bunch of talented people who have help us cut our operating
               <div class="phone">
                 <i class="icofont-phone"></i>
                 <h4>Call:</h4>
-                <p>a.mahuvawalla@dadauditing</p>
+                <p>+971524829179</p>
               </div>
 
             </div>
@@ -512,7 +538,7 @@ Ali and his team our bunch of talented people who have help us cut our operating
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form id="contact-form" role="form" class="php-email-form">
               <div class="form-row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
