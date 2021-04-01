@@ -48,19 +48,19 @@
           }
           console.log("On Submit Called...");  
           this.contact_number.value = Math.random() * 100000 | 0;
-          // these IDs from the previous steps
-          // emailjs.sendForm("service_ruptgpl","template_w2vd26h","template_params","user_O4tAphLHzWweGlFlB5bUY")
-          //     .then(function(response ) {
-          //         console.log('SUCCESS!',response.status,response.text);
-          //     }, function(error) {
-          //         console.log('FAILED...', error);
-          //     });
-          emailjs.send("service_ruptgpl","template_w2vd26h",{
-          from_email: "musheeer5253@gmail.com",
-          to_name: "Nooruddin",
-            from_name: "Musheer",
-            message: "Hello World",
-});
+          //these IDs from the previous steps
+          emailjs.sendForm("service_ruptgpl","template_w2vd26h","template_params","user_O4tAphLHzWweGlFlB5bUY")
+              .then(function(response ) {
+                  console.log('SUCCESS!',response.status,response.text);
+              }, function(error) {
+                  console.log('FAILED...', error);
+              });
+//           emailjs.send("service_ruptgpl","template_w2vd26h",{
+//           from_email: "musheeer5253@gmail.com",
+//           to_name: "Nooruddin",
+//             from_name: "Musheer",
+//             message: "Hello World",
+// });
       
       
       
