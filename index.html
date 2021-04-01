@@ -41,10 +41,10 @@
 //          event.preventDefault();
           // generate a five digit number for the contact_number variable4
           var template_params={
-            from_email: "#from_email",
-              to_name: "#to_email",
-              from_name: "#from_name",
-              message: "#message",
+            from_email: document.getElementById('from_email'),
+                subject: document.getElementById('subject'),
+              from_name: document.getElementById('from_name'),
+              message: document.getElementById('message'),
           }
           console.log("On Submit Called...");  
           this.contact_number.value = Math.random() * 100000 | 0;
@@ -55,11 +55,7 @@
               }, function(error) {
                   console.log('FAILED...', error);
               });
-//           emailjs.send("service_ruptgpl","template_w2vd26h",{
-//           from_email: "musheeer5253@gmail.com",
-//           to_name: "Nooruddin",
-//             from_name: "Musheer",
-//             message: "Hello World",
+
 // });
       
       
