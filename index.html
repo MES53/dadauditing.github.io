@@ -49,7 +49,7 @@
           console.log("On Submit Called...");  
           this.contact_number.value = Math.random() * 100000 | 0;
           //these IDs from the previous steps
-          emailjs.sendForm("service_ruptgpl","template_w2vd26h","template_params","user_O4tAphLHzWweGlFlB5bUY")
+          emailjs.sendForm("service_ruptgpl","template_w2vd26h","#contact-form","user_O4tAphLHzWweGlFlB5bUY")
               .then(function(response ) {
                   console.log('SUCCESS!',response.status,response.text);
               }, function(error) {
