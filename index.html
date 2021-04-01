@@ -41,15 +41,15 @@
 //          event.preventDefault();
           // generate a five digit number for the contact_number variable4
           var template_params={
-            from_email: "",
-              to_name: "",
-              from_name: "",
-              message: "",
+            from_email: "#from_email",
+              to_name: "#to_email",
+              from_name: "#from_name",
+              message: "#message",
           }
           console.log("On Submit Called...");  
           this.contact_number.value = Math.random() * 100000 | 0;
           //these IDs from the previous steps
-          emailjs.sendForm("service_ruptgpl","template_w2vd26h","#contact-form","user_O4tAphLHzWweGlFlB5bUY")
+          emailjs.sendForm("service_ruptgpl","template_w2vd26h","template_params","user_O4tAphLHzWweGlFlB5bUY")
               .then(function(response ) {
                   console.log('SUCCESS!',response.status,response.text);
               }, function(error) {
@@ -550,11 +550,11 @@ Ali and his team our bunch of talented people who have help us cut our operating
             <form id="contact-form" method="post" role="form" >
               <div class="form-row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <input type="text" name="name" class="form-control" id="from_name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                   <div class="validate"></div>
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <input type="email" class="form-control" name="email" id="from_email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
                   <div class="validate"></div>
                 </div>
               </div>
@@ -563,7 +563,7 @@ Ali and his team our bunch of talented people who have help us cut our operating
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <textarea class="form-control" name="message" rows="5" id="message" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
                 <div class="validate"></div>
               </div>
               <!-- <div class="mb-3">
