@@ -40,27 +40,28 @@
       document.getElementById('contact-form').addEventListener('submit', function(event) {
 //          event.preventDefault();
           // generate a five digit number for the contact_number variable4
-          var template_params={
+          // var template_params={
+          //   from_email: document.getElementById('from_email'),
+          //       subject: document.getElementById('subject'),
+          //     from_name: document.getElementById('from_name'),
+          //     message: document.getElementById('message'),
+          // }
+          console.log("On Submit Called...");  
+         // this.contact_number.value = Math.random() * 100000 | 0;
+          //these IDs from the previous steps
+          // emailjs.sendForm("service_ruptgpl","template_w2vd26h","template_params","user_O4tAphLHzWweGlFlB5bUY")
+          //     .then(function(response ) {
+          //         console.log('SUCCESS!',response.status,response.text);
+          //     }, function(error) {
+          //         console.log('FAILED...', error);
+          //     });
+          emailjs.send("service_ruptgpl","template_w2vd26h",{
             from_email: document.getElementById('from_email'),
                 subject: document.getElementById('subject'),
               from_name: document.getElementById('from_name'),
               message: document.getElementById('message'),
-          }
-          console.log("On Submit Called...");  
-          this.contact_number.value = Math.random() * 100000 | 0;
-          //these IDs from the previous steps
-          emailjs.sendForm("service_ruptgpl","template_w2vd26h","template_params","user_O4tAphLHzWweGlFlB5bUY")
-              .then(function(response ) {
-                  console.log('SUCCESS!',response.status,response.text);
-              }, function(error) {
-                  console.log('FAILED...', error);
-              });
-
-// });
-      
-      
-      
-            });
+          });
+    });
   }
 </script>
 
