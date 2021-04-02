@@ -39,13 +39,6 @@
   window.onload = function() {
       document.getElementById('contact-form').addEventListener('submit', function(event) {
 //          event.preventDefault();
-          // generate a five digit number for the contact_number variable4
-          // var template_params={
-          //   from_email: document.getElementById('from_email'),
-          //       subject: document.getElementById('subject'),
-          //     from_name: document.getElementById('from_name'),
-          //     message: document.getElementById('message'),
-          // }
           console.log("On Submit Called...");  
             console.log("Not Called")
 
@@ -546,7 +539,7 @@ Ali and his team our bunch of talented people who have help us cut our operating
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form id="contact-form" method="post" role="form" >
+            <form id="contact-form"  action="contact.php" method="post" role="form" >
               <div class="form-row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="from_name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
