@@ -1,36 +1,32 @@
 <?php
 
-
-if(isset($_POST['submit'])){
-$name= $_POST['name'];
-$visitor_email=$_POST['email'];
+$name= $_POST['from_name'];
+$visitor_email=$_POST['from_email'];
 $message=$_POST['message'];
 
 
-$email_from =$_POST['email'];
+$email_from ="noreply@testing.com";
 $email_subject=$_POST['subject'];
-$email_body="User Name: $name.\n".
-                "User Email:$visitor_email.\n".
-                    "User Subject:$email_subject.\n".
-                        "Message :$message.\n";
+$email_body="User Name: $name.\r\n".
+                "User Email:$visitor_email.\r\n".
+                    "User Subject:$email_subject.\r\n".
+                        "Message :$message.\r\n";
 
 
 $to="mr.rock462@gmail.com";
-$headers="From:$email_from\r\n";
+$headers="From:$email_from\r\n"; 
 $headers="Reply-to: $visitor_email\r\n"
 
-  mail($to,$subject,$message,$headers);
-
+  if($visitor_email!=null){
+  
+    mail($to,$subject,$email_body,$headers);
+  
+ }
     header("Location:index.html");
-    
+
     echo "Mail Sent Thank you!!!"
 
-
-}
-
 // $receiving_email_address = 'mr.rock462@gmail.com';
-
- 
 
 //   $contact = new PHP_Email_Form;
 //   $contact->ajax = true;
