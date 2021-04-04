@@ -539,23 +539,23 @@ Ali and his team our bunch of talented people who have help us cut our operating
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form id="contact-form"  action="contact.php" method="post" role="form" >
+            <form id="gform" name="gform" action="https://docs.google.com/forms/d/e/1FAIpQLSepl-WTKkzDYYh5bV0AFAW2PQWHqLl9A-GbgTF4MISa0z3eqw/formResponse?usp=sf_link" target="hidden_iframe" onsubmit="submitted=true;" >
               <div class="form-row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="from_name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <input type="text" name="name" class="form-control" id="entry.1172297135" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                   <div class="validate"></div>
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="email" class="form-control" name="from_email" id="from_email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <input type="email" class="form-control" name="entry.271953785" id="from_email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
                   <div class="validate"></div>
                 </div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <input type="text" class="form-control" name="subject" id="entry.1059962999" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" id="message" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <textarea class="form-control" name="message" rows="5" id="entry.857871412" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
                 <div class="validate"></div>
               </div>
               <!-- <div class="mb-3">
@@ -567,6 +567,8 @@ Ali and his team our bunch of talented people who have help us cut our operating
 
             </form>
 
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;" onload="if(submitted){}"></iframe>
+          
           </div>
 
         </div>
@@ -643,6 +645,21 @@ Hor AL Anz Dubai.<br><br>
 
   <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
   <div id="preloader"></div>
+
+<!--Form Submission-->
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript">var submitted=false;</script>
+  <script type="text/javascript">
+    $('#gform').on('submit', function(e) {
+      $('#gform *').fadeOut(2000);
+      $('#gform').prepend('Your submission has been processed...');
+      });
+    </script>
+
+
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>
